@@ -1,0 +1,21 @@
+<div class="banner">
+  <div class="text-center">
+    <h1>Save any kind of movies</h1>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h5 class="mb-0">All my lists</h5>
+    <%= link_to 'Create a movie list', new_list_path, class: 'btn btn-flat' %>
+  </div>
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="card">
+        <%= link_to list_path(list), class:'card-text-center' do %>
+          <%= list.name %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

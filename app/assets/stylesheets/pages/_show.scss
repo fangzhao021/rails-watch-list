@@ -1,0 +1,116 @@
+.banner-movie-list {
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);
+    h1 {
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+    }
+    .btn-gradient {
+      color:white;
+      padding: 8px 24px;
+      border-radius: 4px;
+      background: linear-gradient(#fbe416, #c4b80f);
+      transition: background 0.3s ease;
+    }
+  }
+
+.newbookmark {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+}
+  
+.row-movie {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  img {
+    object-fit: cover;
+    height: 100px;
+    width: 100%;
+  }
+}
+
+.text-des {
+  font-size: 12px;
+}
+
+.text-comment {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.card-movie-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+}
+
+.card-movie-review {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1762a0;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #1ba8cb;
+    color: white;
+  }
+}
+
+.btn-ghost {
+    color: #dd2929;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    transition: opacity 0.3s ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    .cards {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    .cards {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  

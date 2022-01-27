@@ -1,0 +1,31 @@
+<div class="banner-movie-list">
+  <h1 class="text-center"><%= @list.name %> movies</h1>
+  <p class="btn btn-gradient"><%= @list.movies.count%> movies</p>
+</div>
+  
+<div class="container py-5">
+  <div class="newbookmark">
+    <%= link_to 'Add a new bookmark', new_list_bookmark_path(@list), class: 'btn btn-flat' %>
+  </div>
+  <div class="row-movie">
+    <% @list.movies.each do |movie| %>
+      <div class="cards-movie-info">
+        <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png" %>
+        
+        <div class="card-movie-name">
+          <h5><strong><%= movie.title %></strong></h5>
+          <p><%= movie.rating %></p>
+        </div>
+        
+        <p class="text-des"><%= movie.overview %></p>
+        
+        <div class="card-movie-review">
+          <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+          <p class="text-comment"><%= bookmark.comment %></p>
+          <%= link_to "delete", bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-ghost" %>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+</div>
